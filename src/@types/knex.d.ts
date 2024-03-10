@@ -5,12 +5,21 @@ import { Knex } from 'knex'
 
 declare module 'knex/types/tables' {
   export interface Tables {
-    transactions: {
+    users: {
       id: string
-      title: string
-      amount: number
+      name: string
+      email: string
+      password: string
       created_at: string
-      session_id?: string
+    }
+    meals: {
+      id: string
+      user_id: string
+      title: string
+      description: string
+      in_the_diet: boolean
+      meal_date: string
+      created_at: string
     }
   }
 }
